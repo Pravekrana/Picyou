@@ -32,7 +32,7 @@ const CreatePost = () => {
         const formData = new FormData();
         formData.append('prompt', form.prompt);
   
-        const response = await fetch('http://localhost:8080/api/v1/stability', {
+        const response = await fetch('https://picyou.onrender.com/api/v1/stability', {
           method: 'POST',
           body: formData, // ✅ Sending FormData instead of JSON
         });
@@ -61,7 +61,7 @@ const CreatePost = () => {
     if (form.prompt && form.photo) {
       setLoading(true);
       try {
-        const response = await fetch('http://localhost:8080/api/v1/post', {
+        const response = await fetch('https://picyou.onrender.com/api/v1/post', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
